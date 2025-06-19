@@ -26,7 +26,7 @@ export function SearchInterface({ onSearch, isLoading, hasSearched }: SearchInte
 
   if (hasSearched) {
     return (
-      <div className="border-t border-dark bg-primary-dark/95 backdrop-blur-sm p-4 lg:p-6">
+      <div className="border-t border-gray-700 bg-gray-900/95 backdrop-blur-sm p-4 lg:p-6">
         <div className="max-w-4xl mx-auto">
           <form onSubmit={handleSubmit} className="relative">
             <div className="relative">
@@ -35,19 +35,19 @@ export function SearchInterface({ onSearch, isLoading, hasSearched }: SearchInte
                 placeholder="Ask anything..."
                 value={query}
                 onChange={(e) => setQuery(e.target.value)}
-                className="w-full bg-secondary-dark border-dark rounded-xl px-6 py-4 pr-16 text-primary placeholder-text-muted focus:outline-none focus:ring-2 focus:ring-accent-gold focus:border-transparent transition-all duration-200"
+                className="w-full bg-gray-800 border-gray-600 rounded-xl px-6 py-4 pr-16 text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-yellow-500 focus:border-transparent transition-all duration-200 text-lg"
                 disabled={isLoading}
               />
               <Button
                 type="submit"
                 disabled={isLoading || !query.trim()}
-                className="absolute right-2 top-1/2 transform -translate-y-1/2 bg-gradient-to-r from-accent-gold to-accent-gold-hover text-white rounded-lg px-4 py-2 font-medium hover:from-accent-gold-hover transition-all duration-200 flex items-center space-x-2"
+                className="absolute right-2 top-1/2 transform -translate-y-1/2 bg-gradient-to-r from-yellow-500 to-yellow-600 text-black rounded-lg px-4 py-2 font-medium hover:from-yellow-600 hover:to-yellow-700 transition-all duration-200 flex items-center space-x-2"
               >
                 <Send className="w-5 h-5" />
                 <span className="hidden sm:inline">Search</span>
               </Button>
             </div>
-            <p className="text-muted text-sm mt-2 text-center">
+            <p className="text-gray-400 text-sm mt-2 text-center">
               Powered by Tavily search and DeepSeek AI
             </p>
           </form>
@@ -138,7 +138,7 @@ export function SearchInterface({ onSearch, isLoading, hasSearched }: SearchInte
       </div>
 
       {/* Search Input */}
-      <div className="border-t border-dark bg-primary-dark/95 backdrop-blur-sm p-4 lg:p-6">
+      <div className="border-t border-gray-700 bg-gray-900/95 backdrop-blur-sm p-4 lg:p-6">
         <div className="max-w-4xl mx-auto">
           <form onSubmit={handleSubmit} className="relative">
             <div className="relative">
@@ -147,19 +147,19 @@ export function SearchInterface({ onSearch, isLoading, hasSearched }: SearchInte
                 placeholder="Ask anything..."
                 value={query}
                 onChange={(e) => setQuery(e.target.value)}
-                className="w-full bg-secondary-dark border-dark rounded-xl px-6 py-4 pr-16 text-primary placeholder-text-muted focus:outline-none focus:ring-2 focus:ring-accent-gold focus:border-transparent transition-all duration-200"
+                className="w-full bg-gray-800 border-gray-600 rounded-xl px-6 py-4 pr-16 text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-yellow-500 focus:border-transparent transition-all duration-200 text-lg"
                 disabled={isLoading}
               />
               <Button
                 type="submit"
                 disabled={isLoading || !query.trim()}
-                className="absolute right-2 top-1/2 transform -translate-y-1/2 bg-gradient-to-r from-accent-gold to-accent-gold-hover text-white rounded-lg px-4 py-2 font-medium hover:from-accent-gold-hover transition-all duration-200 flex items-center space-x-2"
+                className="absolute right-2 top-1/2 transform -translate-y-1/2 bg-gradient-to-r from-yellow-500 to-yellow-600 text-black rounded-lg px-4 py-2 font-medium hover:from-yellow-600 hover:to-yellow-700 transition-all duration-200 flex items-center space-x-2"
               >
                 <Send className="w-5 h-5" />
                 <span className="hidden sm:inline">Search</span>
               </Button>
             </div>
-            <p className="text-muted text-sm mt-2 text-center">
+            <p className="text-gray-400 text-sm mt-2 text-center">
               Powered by Tavily search and DeepSeek AI
             </p>
           </form>
