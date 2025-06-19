@@ -46,7 +46,18 @@ export function AIResponse({ searchData, isLoading }: AIResponseProps) {
           <h3 className="font-semibold mb-3 text-accent-gold">AI Response</h3>
           <div className="prose prose-invert max-w-none">
             <div className="text-primary leading-relaxed whitespace-pre-wrap">
-              {searchData.aiResponse}
+              {searchData.aiResponse?.includes("AI response generation is currently unavailable") ? (
+                <div>
+                  <div className="text-yellow-400 mb-3">
+                    🔍 Search completed successfully! AI response is temporarily unavailable.
+                  </div>
+                  <div className="text-gray-300">
+                    {searchData.aiResponse}
+                  </div>
+                </div>
+              ) : (
+                searchData.aiResponse
+              )}
             </div>
           </div>
 

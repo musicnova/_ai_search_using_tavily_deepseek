@@ -19,8 +19,20 @@ export async function registerRoutes(app: Express): Promise<Server> {
       // Perform Tavily search
       const searchResults = await performTavilySearch(query);
       
-      // Generate AI response using DeepSeek
-      const aiResponse = await generateDeepSeekResponse(query, searchResults);
+      // Try to generate AI response using DeepSeek, but continue if it fails
+      let aiResponse = "Search results found. AI response generation is currently unavailable.";
+      try {
+        aiResponse = await generateDeepSeekResponse(query, searchResults);
+      } catch (aiError) {
+        console.warn("AI response generation failed:", aiError);
+        // Create a basic response from search results
+        if (searchResults.results && searchResults.results.length > 0) {
+          const topResults = searchResults.results.slice(0, 3);
+          aiResponse = `I found ${searchResults.results.length} results for "${query}":\n\n${topResults.map((result, i) => 
+            `${i + 1}. ${result.title}\n${result.content.substring(0, 200)}...\n`
+          ).join('\n')}`;
+        }
+      }
       
       // Update search with results
       const updatedSearch = await storage.updateSearch(search.id, aiResponse, searchResults);
