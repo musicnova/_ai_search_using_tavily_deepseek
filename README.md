@@ -232,6 +232,4 @@ MIT License - свободно используйте для любых целе
 
 ---
 
-**Автор:** AI Search Engine Team  
-**Версия:** 1.0.0  
-**Последнее обновление:** Декабрь 2024
+[Demo](https://ai-search-assistant-novator24.replit.app/)
