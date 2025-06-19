@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { useMutation } from "@tanstack/react-query";
 import { Search, Lightbulb, Clock, Monitor } from "lucide-react";
-import { SearchInterface } from "../components/search-interface";
+import { SearchInterface } from "../components/search-interface-simple";
 import { AIResponse } from "../components/ai-response";
 import { SearchResultsSidebar } from "../components/search-results-sidebar";
 import { searchApi } from "../lib/api";
